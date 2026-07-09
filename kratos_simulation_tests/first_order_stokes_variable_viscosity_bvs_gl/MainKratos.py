@@ -7,10 +7,10 @@ import numpy as np
 import KratosMultiphysics
 import KratosMultiphysics.FluidDynamicsApplication as FDApp
 
-def CreateAnalysisStageWithFlushInstance(cls, global_model, parameters, results_matrix_filename, node_locations_filename, gt_solver):
+def CreateAnalysisStageWithFlushInstance(cls, global_model, parameters, gt_solver):
     class AnalysisStageWithFlush(cls):
 
-        def __init__(self, model,project_parameters, results_matrix_filename, node_locations_filename, flush_frequency=10.0):
+        def __init__(self, model,project_parameters, flush_frequency=10.0):
             super().__init__(model,project_parameters)
 
             # Add extra nodal variables
@@ -25,11 +25,6 @@ def CreateAnalysisStageWithFlushInstance(cls, global_model, parameters, results_
             self.flush_frequency = flush_frequency
             self.last_flush = time.time()
             sys.stdout.flush()
-
-            self.reults_matrix_filename = results_matrix_filename
-            self.node_locations_filename = node_locations_filename
-
-            self.step_count = 0
 
         def Initialize(self):
             super().Initialize()
@@ -135,10 +130,11 @@ def CreateAnalysisStageWithFlushInstance(cls, global_model, parameters, results_
                 )
                 local_grad_process.Execute()
 
-    return AnalysisStageWithFlush(global_model, parameters, results_matrix_filename, node_locations_filename)
+    return AnalysisStageWithFlush(global_model, parameters)
 
-def run_simulation(results_matrix_filename, node_locations_filename, gt_solver):
-    with open("kratos_files/ProjectParameters.json", 'r') as parameter_file:
+def run_simulation(gt_solver):
+    project_parameters_path = "kratos_simulation_tests/first_order_stokes_variable_viscosity_bvs_gl/kratos_files/ProjectParameters.json"
+    with open(project_parameters_path, 'r') as parameter_file:
         parameters = KratosMultiphysics.Parameters(parameter_file.read())
 
     analysis_stage_module_name = parameters["analysis_stage"].GetString()
@@ -149,5 +145,5 @@ def run_simulation(results_matrix_filename, node_locations_filename, gt_solver):
     analysis_stage_class = getattr(analysis_stage_module, analysis_stage_class_name)
 
     global_model = KratosMultiphysics.Model()
-    simulation = CreateAnalysisStageWithFlushInstance(analysis_stage_class, global_model, parameters, results_matrix_filename, node_locations_filename, gt_solver)
+    simulation = CreateAnalysisStageWithFlushInstance(analysis_stage_class, global_model, parameters, gt_solver)
     simulation.Run()

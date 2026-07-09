@@ -5,14 +5,11 @@ from pathlib import Path
 from kratos_simulation_tests.first_order_stokes_variable_viscosity_bvs_gl.MainKratos import run_simulation as kratos_run_simulation
 from kratos_simulation_tests.first_order_stokes_variable_viscosity_bvs_gl.ground_truth import GroundTruthSolver
 
-def run_kratos(kratos_results_filename, kratos_node_locations_filename, gt_solver):
-    kratos_run_simulation(kratos_results_filename, kratos_node_locations_filename, gt_solver)
-
 def run_evaluation():
 
-    elements_num = 20480
+    elements_num = 5120
 
-    kratos_files_path = Path("kratos_files")
+    kratos_files_path = Path("kratos_simulation_tests/first_order_stokes_variable_viscosity_bvs_gl/kratos_files")
     src_mdpa_file_path = kratos_files_path / f"channel_{elements_num}.mdpa"
     dst_mdpa_file_path = kratos_files_path / "channel.mdpa"
 
@@ -22,9 +19,6 @@ def run_evaluation():
         raise f"Could not copy {src_mdpa_file_path} to {dst_mdpa_file_path}"
 
     gt_solver = GroundTruthSolver(dst_mdpa_file_path)
-
-    kratos_results_filename = "kratos_results.npy"
-    kratos_node_locations_filename = "kratos_node_locations.npy"
 
     print("Domain bounds:", gt_solver.bounds)
     print("Ground truth analytical functions:", gt_solver.get_dirichlet_boundary_analytical_functions())
@@ -53,4 +47,4 @@ def run_evaluation():
     with open(project_parameters_path, "w") as f:
         json.dump(kratos_project_params, f, indent=4)
 
-    run_kratos(kratos_results_filename, kratos_node_locations_filename, gt_solver)
+    kratos_run_simulation(gt_solver)

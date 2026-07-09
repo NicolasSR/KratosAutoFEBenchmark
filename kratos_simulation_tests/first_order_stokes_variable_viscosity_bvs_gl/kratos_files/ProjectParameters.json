@@ -42,7 +42,7 @@
                         },
                         "point_data_configuration": []
                     },
-                    "output_name": "gid_output/main_result"
+                    "output_name": "kratos_simulation_tests/first_order_stokes_variable_viscosity_bvs_gl/gid_output/main_result"
                 }
             }
         ],
@@ -58,7 +58,7 @@
                     "file_format": "ascii",
                     "output_precision": 7,
                     "output_sub_model_parts": false,
-                    "output_path": "vtk_output",
+                    "output_path": "kratos_simulation_tests/first_order_stokes_variable_viscosity_bvs_gl/vtk_output",
                     "save_output_files_in_folder": true,
                     "nodal_solution_step_data_variables": [
                         "VELOCITY",
@@ -76,7 +76,7 @@
     "solver_settings": {
         "model_part_name": "FluidModelPart",
         "domain_size": 2,
-        "solver_type": "custom_stokes_variable_viscosity",
+        "solver_type": "first_order_stokes_variable_viscosity",
         "material_import_settings": {
             "materials_filename": "kratos_simulation_tests/first_order_stokes_variable_viscosity_bvs_gl/kratos_files/FluidMaterials.json"
         },
@@ -102,8 +102,8 @@
             "time_step": 1.0
         },
         "formulation": {
-            "element_type": "custom_stokes_variable_viscosity",
-            "delta_parameter": 1.0167561412070932e-06,
+            "element_type": "first_order_stokes_variable_viscosity_bvs_gl",
+            "delta_parameter": 4.0610786224821326e-06,
             "sigma_parameter": 0
         },
         "reform_dofs_at_each_step": false,
