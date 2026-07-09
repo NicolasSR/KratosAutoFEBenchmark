@@ -35,9 +35,7 @@
                                 "PRESSURE",
                                 "REACTION",
                                 "REACTION_WATER_PRESSURE",
-                                "DYNAMIC_VISCOSITY",
-                                "NODAL_VAUX",
-                                "NODAL_PAUX"
+                                "DYNAMIC_VISCOSITY"
                             ],
                             "nodal_nonhistorical_results": [],
                             "gauss_point_results": []
@@ -80,7 +78,7 @@
         "domain_size": 2,
         "solver_type": "custom_stokes_variable_viscosity",
         "material_import_settings": {
-            "materials_filename": "kratos_files/FluidMaterials.json"
+            "materials_filename": "kratos_simulation_tests/first_order_stokes_variable_viscosity_bvs_gl/kratos_files/FluidMaterials.json"
         },
         "enforce_element_and_conditions_replacement": true,
         "echo_level": 1,
@@ -111,7 +109,7 @@
         "reform_dofs_at_each_step": false,
         "model_import_settings": {
             "input_type": "mdpa",
-            "input_filename": "kratos_files/channel"
+            "input_filename": "kratos_simulation_tests/first_order_stokes_variable_viscosity_bvs_gl/kratos_files/channel"
         }
     },
     "processes": {
