@@ -1,0 +1,439 @@
+{
+    "_author": "YOUR NAME",
+    "_mcdict_version": "1.0",
+    "concepts": {
+        "0": {
+            "code_var_name": "u",
+            "concept_category": "variable",
+            "description": "Velocity vector field for the fluid. It is one of the unknowns of the Stokes equation and acts as a trial function in our FEM discretization.",
+            "primitive_symbols": [
+                "75"
+            ],
+            "properties": {
+                "tensor-rank": "1",
+                "variable-type": "trial-function"
+            },
+            "sog_list": [
+                {
+                    "start_id": "p_6_0-1",
+                    "stop_id": "p_6_1-0",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_10_5-35",
+                    "stop_id": "p_10_9-37",
+                    "type": 0
+                }
+            ]
+        },
+        "1": {
+            "code_var_name": "sigma",
+            "concept_category": "variable",
+            "description": "Reaction coefficient within the Stokes equation. It is described as a positive given value.  It derives from the temporal discretization of the Stokes problem and will be inversely proportional to a time-step size.",
+            "primitive_symbols": [
+                "cf83"
+            ],
+            "properties": {
+                "positive": "on",
+                "tensor-rank": "0",
+                "variable-type": "symbolic-variable"
+            },
+            "sog_list": [
+                {
+                    "start_id": "p_6_8-1",
+                    "stop_id": "p_6_10-5",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_6_10-44",
+                    "stop_id": "p_6_13-47",
+                    "type": 0
+                }
+            ]
+        },
+        "2": {
+            "code_var_name": "nu",
+            "concept_category": "variable",
+            "description": "Viscosity field for the fluid domain. It is described as a given value.",
+            "primitive_symbols": [
+                "cebd"
+            ],
+            "properties": {
+                "positive": "on",
+                "tensor-rank": "0",
+                "variable-type": "nodal-variable"
+            },
+            "sog_list": [
+                {
+                    "start_id": "p_6_6-2",
+                    "stop_id": "p_6_7-0",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_6_10-1",
+                    "stop_id": "p_6_10-5",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_6_13-53",
+                    "stop_id": "p_6_15-15",
+                    "type": 0
+                },
+                {
+                    "start_id": "formula_4",
+                    "stop_id": "formula_4",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_18_0-246",
+                    "stop_id": "p_18_0-251",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_18_1-1",
+                    "stop_id": "p_18_2-0",
+                    "type": 0
+                }
+            ]
+        },
+        "3": {
+            "code_var_name": "p",
+            "concept_category": "variable",
+            "description": "Pressure scalar field for the fluid domain. It is an unknown of the Stokes equation and will be treated as a trial function within the FEM discretization.",
+            "primitive_symbols": [
+                "70"
+            ],
+            "properties": {
+                "tensor-rank": "0",
+                "variable-type": "trial-function"
+            },
+            "sog_list": [
+                {
+                    "start_id": "p_6_0-7",
+                    "stop_id": "p_6_3-0",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_10_5-35",
+                    "stop_id": "p_10_9-37",
+                    "type": 0
+                }
+            ]
+        },
+        "4": {
+            "code_var_name": "f",
+            "concept_category": "variable",
+            "description": "External force vector. It has a given value.",
+            "primitive_symbols": [
+                "66"
+            ],
+            "properties": {
+                "tensor-rank": "1",
+                "variable-type": "nodal-variable"
+            },
+            "sog_list": [
+                {
+                    "start_id": "p_6_4-2",
+                    "stop_id": "p_6_6-0",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_6_10-1",
+                    "stop_id": "p_6_10-5",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_18_0-246",
+                    "stop_id": "p_18_1-start",
+                    "type": 0
+                }
+            ]
+        },
+        "5": {
+            "code_var_name": "delta",
+            "concept_category": "variable",
+            "description": "Mesh-dependant parameter used within the PSPG stabilization.",
+            "primitive_symbols": [
+                "ceb4"
+            ],
+            "properties": {
+                "tensor-rank": "0",
+                "variable-type": "symbolic-variable"
+            },
+            "sog_list": [
+                {
+                    "start_id": "p_15_2-2",
+                    "stop_id": "p_15_4-21",
+                    "type": 0
+                }
+            ]
+        },
+        "6": {
+            "code_var_name": "v",
+            "concept_category": "variable",
+            "description": "Test function associated to the fluid velocity. Therefore, it is also a vector quantity.",
+            "primitive_symbols": [
+                "76",
+                "68"
+            ],
+            "properties": {
+                "associated_trial_function": "u",
+                "tensor-rank": "1",
+                "variable-type": "test-function"
+            },
+            "sog_list": [
+                {
+                    "start_id": "p_27_7-57",
+                    "stop_id": "p_27_9-4",
+                    "type": 0
+                },
+                {
+                    "start_id": "p_29_0-1",
+                    "stop_id": "p_29_1-end",
+                    "type": 0
+                }
+            ]
+        },
+        "7": {
+            "code_var_name": "q",
+            "concept_category": "variable",
+            "description": "Test function associated with the pressure field. Therefore, it is a scalar quantity.",
+            "primitive_symbols": [
+                "71",
+                "68"
+            ],
+            "properties": {
+                "associated_trial_function": "p",
+                "tensor-rank": "0",
+                "variable-type": "test-function"
+            },
+            "sog_list": []
+        },
+        "8": {
+            "code_var_name": "n",
+            "concept_category": "variable",
+            "description": "Outward unit vector.",
+            "primitive_symbols": [
+                "6e"
+            ],
+            "properties": {
+                "tensor-rank": "1",
+                "variable-type": "symbolic-variable"
+            },
+            "sog_list": [
+                {
+                    "start_id": "p_18_2-2",
+                    "stop_id": "p_18_4-35",
+                    "type": 0
+                }
+            ]
+        }
+    },
+    "environment_settings_list": [
+        {
+            "name": "transpose_gradients_flag",
+            "value": "true"
+        }
+    ],
+    "eoi_dict": {
+        "formula_15": {
+            "ast": "{\"op\":\"assignment\",\"args\":[\"term1\",{\"op\":\"dot_prod\",\"args\":[{\"op\":\"mult\",\"args\":[\"sigma\",\"u\"]},\"v\"]}]}\n{\"op\":\"assignment\",\"args\":[\"term2\",{\"op\":\"double_contract\",\"args\":[{\"op\":\"mult\",\"args\":[\"nu\",{\"op\":\"grad\",\"args\":[\"u\"]}]},{\"op\":\"grad\",\"args\":[\"v\"]}]}]}\n{\"op\":\"assignment\",\"args\":[\"term3_aux\",{\"op\":\"matrix_vector_prod\",\"args\":[{\"op\":\"matrix_transpose\",\"args\":[{\"op\":\"grad\",\"args\":[\"u\"]}]},{\"op\":\"grad\",\"args\":[\"nu\"]}]}]}\n{\"op\":\"assignment\",\"args\":[\"term3\",{\"op\":\"dot_prod\",\"args\":[\"term3_aux\",\"v\"]}]}\n{\"op\":\"assignment\",\"args\":[\"term4\",{\"op\":\"mult\",\"args\":[\"p\",{\"op\":\"div\",\"args\":[\"v\"]}]}]}\n{\"op\":\"assignment\",\"args\":[\"term5\",{\"op\":\"dot_prod\",\"args\":[\"f\",\"v\"]}]}\n{\"op\":\"assignment\",\"args\":[\"func1\",{\"op\":\"subtract\",\"args\":[{\"op\":\"subtract\",\"args\":[{\"op\":\"subtract\",\"args\":[{\"op\":\"add\",\"args\":[\"term1\",\"term2\"]},\"term3\"]},\"term4\"]},\"term5\"]}]}\n{\"op\":\"assignment\",\"args\":[\"term6\",{\"op\":\"mult\",\"args\":[\"q\",{\"op\":\"div\",\"args\":[\"u\"]}]}]}\n{\"op\":\"assignment\",\"args\":[\"term7_aux1\",{\"op\":\"matrix_vector_prod\",\"args\":[{\"op\":\"matrix_transpose\",\"args\":[{\"op\":\"grad\",\"args\":[\"u\"]}]},{\"op\":\"grad\",\"args\":[\"nu\"]}]}]}\n{\"op\":\"assignment\",\"args\":[\"term7_aux2\",{\"op\":\"subtract\",\"args\":[{\"op\":\"add\",\"args\":[{\"op\":\"grad\",\"args\":[\"p\"]},{\"op\":\"mult\",\"args\":[\"sigma\",\"u\"]}]},{\"op\":\"mult\",\"args\":[2,\"term7_aux1\"]}]}]}\n{\"op\":\"assignment\",\"args\":[\"term7\",{\"op\":\"mult\",\"args\":[\"delta\",{\"op\":\"dot_prod\",\"args\":[{\"op\":\"grad\",\"args\":[\"q\"]},\"term7_aux2\"]}]}]}\n{\"op\":\"assignment\",\"args\":[\"term8\",{\"op\":\"mult\",\"args\":[\"delta\",{\"op\":\"dot_prod\",\"args\":[\"f\",{\"op\":\"grad\",\"args\":[\"q\"]}]}]}]}\n{\"op\":\"assignment\",\"args\":[\"func2\",{\"op\":\"subtract\",\"args\":[{\"op\":\"add\",\"args\":[\"term6\",\"term7\"]},\"term8\"]}]}\n{\"op\":\"assignment\",\"args\":[\"functional_element_rhs\",{\"op\":\"add\",\"args\":[\"func1\",\"func2\"]}]}\n{\"op\":\"assignment\",\"args\":[\"functional_condition_rhs\",{\"op\":\"mult\",\"args\":[\"delta\",{\"op\":\"inner_prod\",\"args\":[{\"op\":\"cross_prod\",\"args\":[{\"op\":\"grad\",\"args\":[\"q\"]},\"n\"]},{\"op\":\"mult\",\"args\":[\"nu\",{\"op\":\"curl\",\"args\":[\"u\"]}]}]}]}]}",
+            "ast_variables": [
+                "1",
+                "0",
+                "6",
+                "2",
+                "3",
+                "4",
+                "7",
+                "5",
+                "8"
+            ],
+            "substitutions_dict": "",
+            "symbolic_code": "term1=dot_prod(sigma*u,v)\nterm2=double_contract(nu*grad(u),grad(v))\nterm3_aux=matrix_vector_prod(matrix_transpose(grad(u)),grad(nu))\nterm3=dot_prod(term3_aux,v)\nterm4=p*div(v)\nterm5=dot_prod(f,v)\nfunc1=term1+term2-term3-term4-term5\nterm6=q*div(u)\nterm7_aux1=matrix_vector_prod(matrix_transpose(grad(u)),grad(nu))\nterm7_aux2=grad(p)+sigma*u-2*term7_aux1\nterm7=delta*dot_prod(grad(q),term7_aux2)\nterm8=delta*dot_prod(f,grad(q))\nfunc2=term6+term7-term8\nfunctional_element_rhs=func1+func2\n\nfunctional_condition_rhs = delta*inner_prod(cross_prod(grad(q),n),nu*curl(u))"
+        }
+    },
+    "next_available_mc_id": 9,
+    "occurences_dict": {
+        "mi_10": {
+            "mc_id": "2",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_109": {
+            "mc_id": "5",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_13": {
+            "mc_id": "0",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_15": {
+            "mc_id": "3",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_16": {
+            "mc_id": "4",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_476": {
+            "mc_id": "1",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_481": {
+            "mc_id": "2",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_492": {
+            "mc_id": "2",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_500": {
+            "mc_id": "4",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_508": {
+            "mc_id": "5",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_515": {
+            "mc_id": "1",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_522": {
+            "mc_id": "2",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_526": {
+            "mc_id": "8",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_527": {
+            "mc_id": "2",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_532": {
+            "mc_id": "5",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_533": {
+            "mc_id": "4",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_7": {
+            "mc_id": "1",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "mi_8": {
+            "mc_id": "0",
+            "properties": [],
+            "tag_name": "mi"
+        },
+        "msub_100": {
+            "mc_id": "3",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_101": {
+            "mc_id": "0",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_102": {
+            "mc_id": "0",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_104": {
+            "mc_id": "7",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_105": {
+            "mc_id": "0",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_106": {
+            "mc_id": "7",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_88": {
+            "mc_id": "0",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_89": {
+            "mc_id": "6",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_90": {
+            "mc_id": "0",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_91": {
+            "mc_id": "6",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_92": {
+            "mc_id": "0",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_93": {
+            "mc_id": "6",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_94": {
+            "mc_id": "3",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_95": {
+            "mc_id": "6",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_96": {
+            "mc_id": "6",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_97": {
+            "mc_id": "7",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_98": {
+            "mc_id": "0",
+            "properties": [],
+            "tag_name": "msub"
+        },
+        "msub_99": {
+            "mc_id": "7",
+            "properties": [],
+            "tag_name": "msub"
+        }
+    }
+}

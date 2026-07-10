@@ -1,0 +1,39 @@
+{
+    "science_direct": {
+        "samples": {
+            "first_order_stokes_variable_viscosity_bvs_gl": {
+                "pii":"S0898122125001087",
+                "pruning_references": [
+                    {
+                        "tag": "ce:title",
+                        "attr": {}
+                    }, {
+                        "tag": "ce:section",
+                        "attr": {}
+                    }
+                ]
+            }
+        },
+        "first_order_stokes_variable_viscosity_pspg_sd": {
+            "pii":"S0898122125001087",
+            "pruning_references": [
+                {
+                    "tag": "ce:title",
+                    "attr": {}
+                }, {
+                    "tag": "ce:section",
+                    "attr": {}
+                }
+            ]
+        }
+    },
+    "springer_nature":{
+        "samples": {}
+    },
+    "manual_html": {
+        "samples": {}
+    },
+    "manual_pdf": {
+        "samples": {}
+    }
+}
