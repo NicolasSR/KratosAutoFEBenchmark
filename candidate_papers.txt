@@ -1,0 +1,36 @@
+Papers to do, in order:
+
+https://doi.org/10.1016/j.camwa.2025.03.013
+Fully consistent lowest-order finite element methods for generalised Stokes flows with variable viscosity - Felipe Galarce
+Notes: Done for both GL+BVS and SD+PSPG formulations, with one 2D experiment for each. Missing 3D experiment.
+
+https://doi.org/10.1016/j.jcp.2021.110436
+Robust stabilised finite element solvers for generalised Newtonian fluid flows - Richard Schussnig
+Notes: Seems very complicated to implement the non-stationary one... We could maybe implement the stationary version.
+
+https://www.sciencedirect.com/science/article/pii/S0096300313005717
+A new low order least squares nonconforming characteristics mixed finite element method For Burgers’ equation - Dongyang Shi
+Notes: Needs discontinuous operator (jump). Should implement these in KratosFECompiler first.
+
+https://doi.org/10.1016/j.apnum.2026.04.008
+A divergence constrained mixed finite element method for thermally driven active fluid model - Nan Zheng
+Notes: Seems feasible
+
+https://doi.org/10.1016/j.amc.2019.124615
+A monolithic mixed finite element method for a fluid-structure interaction problem - Maranda Bean
+
+https://doi.org/10.1016/j.camwa.2026.03.002
+A stabilized finite element method for the Navier–Stokes/Darcy coupled problem - Rodolfo Araya
+
+
+
+Potential candidates:
+
+https://www.sciencedirect.com/science/article/pii/S0045782596011541?via%3Dihub
+A finite element formulation for the Stokes problem allowing equal velocity-pressure interpolation
+
+https://www.sciencedirect.com/science/article/pii/S0021999121003314?via%3Dihub
+Robust stabilised finite element solvers for generalised Newtonian fluid flows
+
+https://doi.org/10.1016/j.camwa.2025.07.010
+A weak Galerkin finite element method for the two-dimensional Burgers' equation - Xiaoxiao Chen
