@@ -1,0 +1,253 @@
+{
+    "analysis_stage": "KratosMultiphysics.FluidDynamicsApplication.fluid_dynamics_analysis",
+    "problem_data": {
+        "problem_name": "geometry_generation_gid_files",
+        "parallel_type": "OpenMP",
+        "echo_level": 0,
+        "start_time": 0.0,
+        "end_time": 1
+    },
+    "output_processes": {
+        "gid_output": [
+            {
+                "python_module": "gid_output_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "GiDOutputProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.fluid_computational_model_part",
+                    "postprocess_parameters": {
+                        "result_file_configuration": {
+                            "gidpost_flags": {
+                                "GiDPostMode": "GiD_PostBinary",
+                                "WriteDeformedMeshFlag": "WriteDeformed",
+                                "WriteConditionsFlag": "WriteConditions",
+                                "MultiFileFlag": "SingleFile"
+                            },
+                            "file_label": "time",
+                            "output_control_type": "step",
+                            "output_interval": 1.0,
+                            "body_output": true,
+                            "node_output": false,
+                            "skin_output": false,
+                            "plane_output": [],
+                            "nodal_results": [
+                                "VELOCITY",
+                                "PRESSURE",
+                                "REACTION",
+                                "REACTION_WATER_PRESSURE",
+                                "DYNAMIC_VISCOSITY"
+                            ],
+                            "nodal_nonhistorical_results": [],
+                            "gauss_point_results": []
+                        },
+                        "point_data_configuration": []
+                    },
+                    "output_name": "kratos_simulation_tests/first_order_stokes_variable_viscosity_pspg_sd/gid_output/main_result"
+                }
+            }
+        ],
+        "vtk_output": [
+            {
+                "python_module": "vtk_output_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "VtkOutputProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.fluid_computational_model_part",
+                    "output_control_type": "step",
+                    "output_interval": 1,
+                    "file_format": "ascii",
+                    "output_precision": 7,
+                    "output_sub_model_parts": false,
+                    "output_path": "kratos_simulation_tests/first_order_stokes_variable_viscosity_pspg_sd/vtk_output",
+                    "save_output_files_in_folder": true,
+                    "nodal_solution_step_data_variables": [
+                        "VELOCITY",
+                        "PRESSURE",
+                        "DYNAMIC_VISCOSITY"
+                    ],
+                    "nodal_data_value_variables": [],
+                    "element_data_value_variables": [],
+                    "condition_data_value_variables": [],
+                    "gauss_point_variables_extrapolated_to_nodes": []
+                }
+            }
+        ]
+    },
+    "solver_settings": {
+        "model_part_name": "FluidModelPart",
+        "domain_size": 2,
+        "solver_type": "first_order_stokes_variable_viscosity",
+        "material_import_settings": {
+            "materials_filename": "kratos_simulation_tests/first_order_stokes_variable_viscosity_pspg_sd/kratos_files/FluidMaterials.json"
+        },
+        "enforce_element_and_conditions_replacement": true,
+        "echo_level": 1,
+        "compute_reactions": true,
+        "maximum_iterations": 20,
+        "relative_velocity_tolerance": 1e-05,
+        "absolute_velocity_tolerance": 1e-10,
+        "relative_pressure_tolerance": 1e-05,
+        "absolute_pressure_tolerance": 1e-10,
+        "volume_model_part_name": "FluidParts_Parts_Auto1",
+        "skin_parts": [
+            "WallLaw2D_Wall_law_Auto2",
+            "WallLaw2D_Wall_law_Auto1",
+            "AutomaticInlet2D_Automatic_inlet_velocity_Auto2",
+            "AutomaticInlet2D_Automatic_inlet_velocity_Auto1"
+        ],
+        "no_skin_parts": [],
+        "time_scheme": "steady",
+        "time_stepping": {
+            "automatic_time_step": false,
+            "time_step": 1.0
+        },
+        "formulation": {
+            "element_type": "first_order_stokes_variable_viscosity_pspg_sd",
+            "delta_parameter": 4.954654997463218e-06,
+            "sigma_parameter": 2
+        },
+        "reform_dofs_at_each_step": false,
+        "model_import_settings": {
+            "input_type": "mdpa",
+            "input_filename": "kratos_simulation_tests/first_order_stokes_variable_viscosity_pspg_sd/kratos_files/channel"
+        }
+    },
+    "processes": {
+        "initial_conditions_process_list": [],
+        "boundary_conditions_process_list": [
+            {
+                "python_module": "assign_scalar_variable_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "AssignScalarVariableProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.AutomaticInlet2D_Automatic_inlet_velocity_Auto1",
+                    "variable_name": "VELOCITY_X",
+                    "value": "1/2*(1-2*(abs(y)+5)/(0.12377777777777778*5**3)-1/(0.12377777777777778*(abs(y)+5)**2))",
+                    "constrained": true
+                }
+            },
+            {
+                "python_module": "assign_scalar_variable_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "AssignScalarVariableProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.AutomaticInlet2D_Automatic_inlet_velocity_Auto1",
+                    "variable_name": "VELOCITY_Y",
+                    "value": "0",
+                    "constrained": true
+                }
+            },
+            {
+                "python_module": "apply_outlet_process",
+                "kratos_module": "KratosMultiphysics.FluidDynamicsApplication",
+                "process_name": "ApplyOutletProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.AutomaticInlet2D_Automatic_inlet_velocity_Auto1",
+                    "variable_name": "PRESSURE",
+                    "constrained": true,
+                    "value": "1*(2/2-x)",
+                    "hydrostatic_outlet": false,
+                    "h_top": 0.0
+                }
+            },
+            {
+                "python_module": "assign_scalar_variable_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "AssignScalarVariableProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.AutomaticInlet2D_Automatic_inlet_velocity_Auto2",
+                    "variable_name": "VELOCITY_X",
+                    "value": "1/2*(1-2*(abs(y)+5)/(0.12377777777777778*5**3)-1/(0.12377777777777778*(abs(y)+5)**2))",
+                    "constrained": true
+                }
+            },
+            {
+                "python_module": "assign_scalar_variable_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "AssignScalarVariableProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.AutomaticInlet2D_Automatic_inlet_velocity_Auto2",
+                    "variable_name": "VELOCITY_Y",
+                    "value": "0",
+                    "constrained": true
+                }
+            },
+            {
+                "python_module": "apply_outlet_process",
+                "kratos_module": "KratosMultiphysics.FluidDynamicsApplication",
+                "process_name": "ApplyOutletProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.AutomaticInlet2D_Automatic_inlet_velocity_Auto2",
+                    "variable_name": "PRESSURE",
+                    "constrained": true,
+                    "value": "1*(2/2-x)",
+                    "hydrostatic_outlet": false,
+                    "h_top": 0.0
+                }
+            },
+            {
+                "python_module": "assign_scalar_variable_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "AssignScalarVariableProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.WallLaw2D_Wall_law_Auto1",
+                    "variable_name": "VELOCITY_X",
+                    "value": "1/2*(1-2*(abs(y)+5)/(0.12377777777777778*5**3)-1/(0.12377777777777778*(abs(y)+5)**2))",
+                    "constrained": true
+                }
+            },
+            {
+                "python_module": "assign_scalar_variable_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "AssignScalarVariableProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.WallLaw2D_Wall_law_Auto1",
+                    "variable_name": "VELOCITY_Y",
+                    "value": "0",
+                    "constrained": true
+                }
+            },
+            {
+                "python_module": "assign_scalar_variable_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "AssignScalarVariableProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.WallLaw2D_Wall_law_Auto2",
+                    "variable_name": "VELOCITY_X",
+                    "value": "1/2*(1-2*(abs(y)+5)/(0.12377777777777778*5**3)-1/(0.12377777777777778*(abs(y)+5)**2))",
+                    "constrained": true
+                }
+            },
+            {
+                "python_module": "assign_scalar_variable_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "AssignScalarVariableProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.WallLaw2D_Wall_law_Auto2",
+                    "variable_name": "VELOCITY_Y",
+                    "value": "0",
+                    "constrained": true
+                }
+            }
+        ],
+        "gravity": [
+            {
+                "python_module": "assign_vector_by_direction_process",
+                "kratos_module": "KratosMultiphysics",
+                "process_name": "AssignVectorByDirectionProcess",
+                "Parameters": {
+                    "model_part_name": "FluidModelPart.FluidParts_Parts_Auto1",
+                    "variable_name": "BODY_FORCE",
+                    "modulus": 0.0,
+                    "constrained": false,
+                    "direction": [
+                        0.0,
+                        -1.0,
+                        0.0
+                    ]
+                }
+            }
+        ],
+        "auxiliar_process_list": []
+    }
+}

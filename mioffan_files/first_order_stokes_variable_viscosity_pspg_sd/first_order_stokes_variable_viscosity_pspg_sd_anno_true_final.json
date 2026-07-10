@@ -1,0 +1,188 @@
+{
+    "_anno_version": "1.0",
+    "_annotator": "YOUR NAME",
+    "groups": {},
+    "next_available_group_id": 0,
+    "primitive_symbols": {
+        "41": {
+            "text": "A",
+            "unicode_name": "LATIN CAPITAL LETTER A"
+        },
+        "42": {
+            "text": "B",
+            "unicode_name": "LATIN CAPITAL LETTER B"
+        },
+        "43": {
+            "text": "C",
+            "unicode_name": "LATIN CAPITAL LETTER C"
+        },
+        "44": {
+            "text": "D",
+            "unicode_name": "LATIN CAPITAL LETTER D"
+        },
+        "46": {
+            "text": "F",
+            "unicode_name": "LATIN CAPITAL LETTER F"
+        },
+        "474c": {
+            "text": "GL",
+            "unicode_name": null
+        },
+        "48": {
+            "text": "H",
+            "unicode_name": "LATIN CAPITAL LETTER H"
+        },
+        "4c": {
+            "text": "L",
+            "unicode_name": "LATIN CAPITAL LETTER L"
+        },
+        "51": {
+            "text": "Q",
+            "unicode_name": "LATIN CAPITAL LETTER Q"
+        },
+        "52": {
+            "text": "R",
+            "unicode_name": "LATIN CAPITAL LETTER R"
+        },
+        "5344": {
+            "text": "SD",
+            "unicode_name": null
+        },
+        "54": {
+            "text": "T",
+            "unicode_name": "LATIN CAPITAL LETTER T"
+        },
+        "57": {
+            "text": "W",
+            "unicode_name": "LATIN CAPITAL LETTER W"
+        },
+        "58": {
+            "text": "X",
+            "unicode_name": "LATIN CAPITAL LETTER X"
+        },
+        "59": {
+            "text": "Y",
+            "unicode_name": "LATIN CAPITAL LETTER Y"
+        },
+        "61": {
+            "text": "a",
+            "unicode_name": "LATIN SMALL LETTER A"
+        },
+        "62": {
+            "text": "b",
+            "unicode_name": "LATIN SMALL LETTER B"
+        },
+        "63": {
+            "text": "c",
+            "unicode_name": "LATIN SMALL LETTER C"
+        },
+        "64": {
+            "text": "d",
+            "unicode_name": "LATIN SMALL LETTER D"
+        },
+        "65": {
+            "text": "e",
+            "unicode_name": "LATIN SMALL LETTER E"
+        },
+        "66": {
+            "text": "f",
+            "unicode_name": "LATIN SMALL LETTER F"
+        },
+        "68": {
+            "text": "h",
+            "unicode_name": "LATIN SMALL LETTER H"
+        },
+        "6d6178": {
+            "text": "max",
+            "unicode_name": null
+        },
+        "6d696e": {
+            "text": "min",
+            "unicode_name": null
+        },
+        "6e": {
+            "text": "n",
+            "unicode_name": "LATIN SMALL LETTER N"
+        },
+        "70": {
+            "text": "p",
+            "unicode_name": "LATIN SMALL LETTER P"
+        },
+        "71": {
+            "text": "q",
+            "unicode_name": "LATIN SMALL LETTER Q"
+        },
+        "72": {
+            "text": "r",
+            "unicode_name": "LATIN SMALL LETTER R"
+        },
+        "73": {
+            "text": "s",
+            "unicode_name": "LATIN SMALL LETTER S"
+        },
+        "75": {
+            "text": "u",
+            "unicode_name": "LATIN SMALL LETTER U"
+        },
+        "76": {
+            "text": "v",
+            "unicode_name": "LATIN SMALL LETTER V"
+        },
+        "78": {
+            "text": "x",
+            "unicode_name": "LATIN SMALL LETTER X"
+        },
+        "79": {
+            "text": "y",
+            "unicode_name": "LATIN SMALL LETTER Y"
+        },
+        "7a": {
+            "text": "z",
+            "unicode_name": "LATIN SMALL LETTER Z"
+        },
+        "ce93": {
+            "text": "Γ",
+            "unicode_name": "GREEK CAPITAL LETTER GAMMA"
+        },
+        "ce94": {
+            "text": "Δ",
+            "unicode_name": "GREEK CAPITAL LETTER DELTA"
+        },
+        "cea9": {
+            "text": "Ω",
+            "unicode_name": "GREEK CAPITAL LETTER OMEGA"
+        },
+        "ceb2": {
+            "text": "β",
+            "unicode_name": "GREEK SMALL LETTER BETA"
+        },
+        "ceb3": {
+            "text": "γ",
+            "unicode_name": "GREEK SMALL LETTER GAMMA"
+        },
+        "ceb4": {
+            "text": "δ",
+            "unicode_name": "GREEK SMALL LETTER DELTA"
+        },
+        "ceba": {
+            "text": "κ",
+            "unicode_name": "GREEK SMALL LETTER KAPPA"
+        },
+        "cebd": {
+            "text": "ν",
+            "unicode_name": "GREEK SMALL LETTER NU"
+        },
+        "cf83": {
+            "text": "σ",
+            "unicode_name": "GREEK SMALL LETTER SIGMA"
+        },
+        "cf89": {
+            "text": "ω",
+            "unicode_name": "GREEK SMALL LETTER OMEGA"
+        },
+        "e28887": {
+            "text": "∇",
+            "unicode_name": "NABLA"
+        }
+    }
+}
